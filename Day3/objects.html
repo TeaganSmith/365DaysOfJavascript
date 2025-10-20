@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Objects Testing
+        </title>
+    </head>
+    <body>
+        <script>
+            const product = {
+                name: 'socks',
+                price: 1090
+            };
+            console.log(product);
+            console.log(product.name);
+
+            product.name = 'cotton socks';
+            console.log(product);
+            const test = product;
+
+            test.name = 'new';
+            console.log(test);
+            console.log(product);
+
+            product.extra = 'test';
+            console.log(product);
+
+            delete product.name;
+            console.log(product);
+        </script>;
+    </body>
+</html>

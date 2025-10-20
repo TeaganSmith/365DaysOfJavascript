@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Rock Paper Scissors </title>
+    </head>
+    <body>
+
+        <p>Rock Paper Scissors</p>
+        <button onClick = "playGame('Rock')">Rock</button>
+        <button onClick = "playGame('Paper')">Paper</button>
+        <button onClick = "playGame('Scissors')">Scissors</button>
+
+        <script>
+
+            const results = {
+                wins: 0,
+                ties: 0,
+                losses: 0
+            }
+
+            function pickComputerMove(){
+                let num = Math.floor(Math.random() * 3);
+                if (num === 0){
+                    return 'Rock';
+                } else if (num === 1) {
+                    return 'Paper';
+                } else {
+                    return 'Scissors';
+                }
+            }
+
+            function playGame(move){
+                let comp = pickComputerMove();
+                //console.log(move)
+                console.log(comp);
+                if (comp === move){
+                    results.ties += 1;
+                } else if (comp === 'Rock'){
+                    if (move === 'Paper'){
+                        results.wins += 1;
+                    } else {
+                        results.losses += 1;
+                    }
+                } else if (comp === 'Paper'){
+                    if (move === 'Rock'){
+                        results.losses += 1;
+                    } else {
+                        results.wins += 1;
+                    }
+                } else {
+                    if (move === 'Rock'){
+                        results.wins += 1;
+                    } else {
+                        results.losses += 1;
+                    }
+                }
+                alert(`
+                User: ${move}\n
+                Computer: ${comp}\n
+                Results: Wins: ${results.wins}, Losses: ${results.losses}, Ties: ${results.ties}`);
+            }
+        </script>
+    </body>
+</html>
