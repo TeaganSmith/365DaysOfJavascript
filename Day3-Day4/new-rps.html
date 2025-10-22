@@ -13,15 +13,14 @@
 
         <script>
 
-            let results = JSON.parse(localStorage.getItem('results'));
-
-            if (results === null){
-                results = {
+            let results = JSON.parse(localStorage.getItem('results')) || 
+                {
                     wins: 0,
                     ties: 0,
                     losses: 0
-                }
-            }
+                };
+
+
 
             function pickComputerMove(){
                 let num = Math.floor(Math.random() * 3);
