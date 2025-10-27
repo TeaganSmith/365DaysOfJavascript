@@ -15,17 +15,18 @@
     <script type="text/babel">
       const button = <button>hello</button>
       const paragraph = <p>Testing</p>
-      const date = dayjs().format('MMMM D')
+      let date = dayjs().format('HH:mm:ss')
       const container = document.querySelector('.js-container');
       const root = ReactDOM.createRoot(container)
       
-      const div = (
+      setInterval(() => {
+        date = dayjs().format('HH:mm:ss')
+        let div = (
         <div>
-          <button>Hello</button>
-          <p>Todays Date is {date}</p>
+          <p>Current Time: {date}</p>
         </div>
       );
-      root.render(div)
+        root.render(div)}, 1000)
     </script>
   </body>
 </html>
