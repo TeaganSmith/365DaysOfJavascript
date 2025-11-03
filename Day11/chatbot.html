@@ -59,9 +59,14 @@
           sender: 'robot',
           id: 'id4'
         }];
+
+        function sendMessage (){
+          console.log('Send Message');
+        }
         
         return (
           <>
+            <button onClick={sendMessage}>Send message</button>
             {chatMessages.map((chatMessage) => {
               return (  
                 <ChatMessage 
